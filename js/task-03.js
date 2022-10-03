@@ -12,18 +12,18 @@ const images = [
     alt: "Group of Horses Running",
   },
 ];
-images.map((image, i, images) => {
-  const paintEl = document.createElement("li");
+const groupPaintings = document.querySelector(".gallery");
 
+const imagesAll = images.map((image, i, images) => {
+  const paintEl = document.createElement("li");
   paintEl.classList.add("item");
   paintEl.insertAdjacentHTML(
     "beforeend",
     `<img src =' ${images[i].url}' alt ='${images[i].alt}' width = '320px'>`
   );
-  const groupPaintings = document.querySelector(".gallery");
-
   groupPaintings.style.display = "flex";
   groupPaintings.style.gap = "20px";
-
-  groupPaintings.append(paintEl);
+  return paintEl;
 });
+
+groupPaintings.append(...imagesAll);

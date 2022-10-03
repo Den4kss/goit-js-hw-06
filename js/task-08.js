@@ -13,9 +13,8 @@ formEl.addEventListener("submit", (event) => {
       password: formNameEl.password.value,
     };
     console.log(data);
+    formEl.reset();
   } else {
     alert("Всі поля повинні бути заповнені!");
   }
-
-  formEl.reset();
 });
